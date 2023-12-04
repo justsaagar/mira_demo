@@ -1,0 +1,34 @@
+class RouteConstant {
+  static const String initial = '/';
+  static const String loginRoute = '/logIn';
+  static const String onBoardingRoute = '/onBoarding';
+  static const String registerRoute = '/register';
+  static const String profileRoute = '/profile';
+  static const String goalRoute = '/goal';
+  static const String medicalConditionRoute = '/medicalCondition';
+  static const String activityLevelRoute = '/activityLevel';
+  static const String welcomeRoute = '/welcome';
+  static const String forgotPasswordRoute = '/forgotPassword';
+  static const String verificationRoute = '/verification';
+  static const String resetPasswordRoute = '/resetPassword';
+  static const String changePasswordRoute = '/changePassword';
+  static const String homeRoute = '/home';
+  static const String dashboardRoute = '/dashboard';
+  static const String notificationRoute = '/notification';
+  static const String infoRoute = '/info';
+  static const String activityTrackerRoute = '/activityTracker';
+  static const String profileInfoRoute = '/profileInfo';
+  static const String chatRoute = '/chat';
+  static const String registerVerificationScreen = '/registerVerificationScreen';
+  static const String profileEditScreen = '/profileEditScreen';
+  static const String workOutTrackerScreen = '/workOutTrackerScreen';
+  static const String wantToTrainScreen = '/wantToTrainScreen';
+  static const String connectionLostScreen = '/connectionLostScreen';
+  static const String startWorkOutScreen = '/startWorkOutScreen';
+  static const String musicPlayerScreen = '/musicPlayerScreen';
+  static const String congratulationsScreen = '/congratulationsScreen';
+  static const String scheduleWorkoutScreen = '/scheduleWorkoutScreen';
+  static const String breakFastScreen = '/breakFastScreen';
+  static const String mealDetailsScreen = '/mealDetailsScreen';
+  static const String mealScheduleScreen = '/mealScheduleScreen';
+  }
