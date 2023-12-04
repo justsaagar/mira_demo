@@ -23,3 +23,6 @@ tools>flutter Intl>Initializa for this project
 main.dart ma : localizationsDelegates & supportedLocales add karvanu
 [intl_en.arb](lib -> l10n -> intl_en.arb) ma string add karvani
 use : s.of(context).keyName
+
+[localization_provider.dart] (lib->controller->localization_provider.dart)
+[localization_screen](lib->screen->localization_screen)
