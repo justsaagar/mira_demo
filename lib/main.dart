@@ -1,11 +1,15 @@
 import 'dart:io';
+import 'package:demo/controller/localization_provider.dart';
 import 'package:demo/routes/route_helper.dart';
 import 'package:demo/service/connectivity_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'constant/color_constant.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:demo/generated/l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,20 +33,30 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
-      child: GetMaterialApp(
-        title: 'Gym',
-        navigatorKey: Get.key,
-        theme: ThemeData(useMaterial3: true),
-        debugShowCheckedModeBanner: false,
-        initialRoute: RouteHelper.getMealScheduleRoute(),
-        getPages: RouteHelper.routes,
-        defaultTransition: Transition.fadeIn,
-        builder: (context, child) {
-          child = MediaQuery(data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0), child: child ?? Container());
-          return child;
-        },
+    return MultiProvider(
+      providers: [ChangeNotifierProvider<LocalizationProvider>(create: (context) => LocalizationProvider())],
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+        child: GetMaterialApp(
+          title: 'Gym',
+          localizationsDelegates: [
+            S.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          navigatorKey: Get.key,
+          theme: ThemeData(useMaterial3: true),
+          debugShowCheckedModeBanner: false,
+          initialRoute: RouteHelper.getMealScheduleRoute(),
+          getPages: RouteHelper.routes,
+          defaultTransition: Transition.fadeIn,
+          builder: (context, child) {
+            child = MediaQuery(data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0), child: child ?? Container());
+            return child;
+          },
+        ),
       ),
     );
   }

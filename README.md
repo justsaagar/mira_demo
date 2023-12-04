@@ -14,3 +14,12 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+Localization : 
+Pubspec.yaml ma changes chhe
+Setting>plugins>intl plugins add karavanu
+tools>flutter Intl>Initializa for this project
+main.dart ma : localizationsDelegates & supportedLocales add karvanu
+[intl_en.arb](lib -> l10n -> intl_en.arb) ma string add karvani
+use : s.of(context).keyName
