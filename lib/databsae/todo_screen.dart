@@ -10,6 +10,36 @@ class ToDoScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
+
+          DateTime? picked = await showDatePicker(
+            context: context,
+            firstDate: DateTime(DateTime.now().year - 100, 1),
+            lastDate: DateTime.now().subtract(const Duration(days: 1)),
+            initialDate:DateTime.now().subtract(const Duration(days: 6575)),
+            helpText: 'Date',
+            confirmText: 'okay',
+            cancelText: 'cancel',
+            builder: (context, child) {
+              return Theme(
+                data: ThemeData(
+                  dialogBackgroundColor: Colors.white,
+                  colorScheme: const ColorScheme.light(
+                    primary: Colors.blue,
+                    onSurface: Colors.black,
+                  ),
+                  dialogTheme: DialogTheme(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    elevation: 2,
+                  ),
+                ),
+                child: child!,
+              );
+            },
+          );
+
+          if (picked != null) {
+            print("Let's check picked-> $picked");
+          }
           // await DBHelper.instance.addUser(
           //   TodoModel(
           //     taskId: DateTime.now().microsecondsSinceEpoch,
