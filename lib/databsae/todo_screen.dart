@@ -1,6 +1,7 @@
 import 'package:demo_1/databsae/db_helper.dart';
 import 'package:demo_1/databsae/todo_model.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ToDoScreen extends StatelessWidget {
   const ToDoScreen({super.key});
@@ -39,6 +40,9 @@ class ToDoScreen extends StatelessWidget {
 
           if (picked != null) {
             print("Let's check picked-> $picked");
+            final DateFormat formatter = DateFormat('dd/MM/yyyy hh:mm:ss a');
+            String formatted = formatter.format(picked);
+            print("Let's check formatted-> $formatted");
           }
           // await DBHelper.instance.addUser(
           //   TodoModel(
